@@ -1,5 +1,4 @@
 import Login from '../pages/Login'
-
 import Index from '../pages/admin/dashbord/index'
 import List from '../pages/admin/products/List'
 import Edit from '../pages/admin/products/Edit'

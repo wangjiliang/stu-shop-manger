@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState} from 'react'
 import { withRouter } from 'react-router-dom'
 import {Card, Table, Button, Popconfirm } from 'antd'
+import { listApi } from '../../../service/product'
 
 const dataSource = [
   {
@@ -20,6 +21,16 @@ const dataSource = [
   }
 ]
 function List(props) {
+  const [source, setSource] = useState([])
+  useEffect( () => {
+    listApi().then( res => {
+      console.log(res)
+      // 设置表格数据
+      setSource(res.data)
+    }).catch( err => {
+      console.log(err)
+    })
+  },[])
   const columns = [
     {
       title: '序号',
