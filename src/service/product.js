@@ -8,8 +8,8 @@ export function createApi (data) {
   return post('创建商品url', data)
 }
 
-export function modifyApi (id) {
-  return put(`修改商品url${id}`)
+export function modifyApi (id, data) {
+  return put(`修改商品url${id}`,data)
 }
 
 export function deleteApi (id) {

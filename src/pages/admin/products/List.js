@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from 'react'
 import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
 import {Card, Table, Button, Popconfirm } from 'antd'
 import { listApi, deleteApi } from '../../../service/product'
 
@@ -49,6 +50,7 @@ const dataSource = [
 ]
 
 function List(props) {
+  console.log(props)
   const [source, setSource] = useState([])
 
   useEffect( () => {
@@ -116,5 +118,5 @@ function List(props) {
     </Card>
   )
 }
-
-export default withRouter(List)
+const mapStateToProps = (state) => state.product
+export default connect(mapStateToProps)(withRouter(List))
